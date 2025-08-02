@@ -27,7 +27,7 @@ const Contact = () => {
         toast.success('Message envoyé avec succès !', {
           duration: 2500,
           position: 'bottom-right',
-          closeButton: false, // 👉 enlève le X
+          closeButton: false, 
         });
 
         setTimeout(() => navigate('/'), 2600);

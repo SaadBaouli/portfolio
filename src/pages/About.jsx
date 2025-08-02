@@ -35,7 +35,7 @@ const About = () => {
           Ma priorité : un code propre, rapide, et orienté expérience utilisateur.
         </p>
 
-        {/* Animation de valeurs personnelles */}
+        
         <div className="mt-8 mb-6 flex flex-wrap justify-center gap-4">
           {softSkills.map((skill, index) => (
             <motion.span
@@ -50,7 +50,7 @@ const About = () => {
           ))}
         </div>
 
-        {/* Espace + Bouton CV */}
+       
         <div className="mt-8">
           <CVButton />
         </div>

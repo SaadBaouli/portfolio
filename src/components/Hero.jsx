@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="min-h-[84vh] flex items-center justify-center px-6 md:px-8 bg-primary text-white">
       <div className="w-full max-w-6xl">
-        {/* Titre centré */}
+        
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -16,9 +16,9 @@ const Hero = () => {
           Développeur Full Stack | Créateur d&apos;expériences web
         </motion.h1>
 
-        {/* Grid responsive */}
+        
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
-          {/* Photo */}
+          
           <motion.div
             className="col-span-1 md:col-span-2 flex justify-center"
             initial={{ opacity: 0, x: -50 }}
@@ -32,7 +32,7 @@ const Hero = () => {
             />
           </motion.div>
 
-          {/* Infos */}
+         
           <motion.div
             className="col-span-1 md:col-span-3 text-center md:text-left"
             initial={{ opacity: 0, x: 50 }}
@@ -48,13 +48,13 @@ const Hero = () => {
               pour créer des expériences utilisateur intuitives, robustes et centrées sur la qualité du code.
             </p>
 
-            {/* Réseaux sociaux avec icônes bleu ciel par défaut */}
+           
             <div className="flex justify-center md:justify-start gap-6 text-3xl">
               {[
-                { href: 'https://linkedin.com', icon: <FaLinkedin /> },
-                { href: 'https://github.com', icon: <FaGithub /> },
-                { href: 'https://instagram.com', icon: <FaInstagram /> },
-                { href: 'https://wa.me/212600000000', icon: <FaWhatsapp /> },
+                { href: 'https://www.linkedin.com/in/saad-baouli-571a39363/', icon: <FaLinkedin /> },
+                { href: 'https://github.com/SaadBaouli/portfolio', icon: <FaGithub /> },
+                { href: 'https://www.instagram.com/baoulisaad10/', icon: <FaInstagram /> },
+                // { href: 'https://wa.me/+212 681-794257', icon: <FaWhatsapp /> },
               ].map(({ href, icon }, i) => (
                 <a
                   key={i}

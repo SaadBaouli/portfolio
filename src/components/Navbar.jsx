@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-primary text-white shadow p-4 px-6 md:px-14 flex justify-between items-center relative">
-      {/* Titre animé */}
+      
       <Link to="/" onClick={() => setIsOpen(false)}>
         <motion.h1
           initial={{ opacity: 0, x: -20 }}
@@ -27,13 +27,13 @@ const Navbar = () => {
         </motion.h1>
       </Link>
 
-      {/* Bouton burger mobile */}
+      
       <button
         className="md:hidden text-white focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
-        {/* Icône burger simple */}
+        
         <svg
           className="w-8 h-8"
           fill="none"
@@ -42,7 +42,7 @@ const Navbar = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           {isOpen ? (
-            // Croix pour fermer
+            
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -50,7 +50,7 @@ const Navbar = () => {
               d="M6 18L18 6M6 6l12 12"
             />
           ) : (
-            // Trois barres burger
+            
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -61,7 +61,7 @@ const Navbar = () => {
         </svg>
       </button>
 
-      {/* Menu desktop */}
+      
       <ul className="hidden md:flex gap-6 text-sm font-medium ml-10">
         {links.map(({ path, label }) => {
           const isActive = location.pathname === path;
@@ -82,7 +82,7 @@ const Navbar = () => {
         })}
       </ul>
 
-      {/* Menu mobile animé avec framer-motion */}
+      
       <AnimatePresence>
         {isOpen && (
           <motion.ul

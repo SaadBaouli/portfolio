@@ -7,7 +7,10 @@ import {
   FaCss3Alt,
   FaJs,
   FaDatabase,
+  FaPhp,
+  FaFire
 } from 'react-icons/fa';
+import { SiTailwindcss, SiFirebase } from 'react-icons/si';
 
 const skills = [
   {
@@ -29,7 +32,7 @@ const skills = [
     name: 'MySQL',
     icon: <FaDatabase />,
     slug: 'mysql',
-    color: 'text-yellow-400',
+    color: 'text-amber-400',
   },
   {
     id: 4,
@@ -51,6 +54,27 @@ const skills = [
     icon: <FaJs />,
     slug: 'javascript',
     color: 'text-yellow-300',
+  },
+  {
+    id: 7,
+    name: 'PHP',
+    icon: <FaPhp />,
+    slug: 'php',
+    color: 'text-purple-500',
+  },
+  {
+    id: 8,
+    name: 'Tailwind CSS',
+    icon: <SiTailwindcss />,
+    slug: 'tailwind',
+    color: 'text-cyan-400',
+  },
+  {
+    id: 9,
+    name: 'Firebase',
+    icon: <SiFirebase />,
+    slug: 'firebase',
+    color: 'text-amber-500',
   },
 ];
 
@@ -77,9 +101,8 @@ const Skills = () => {
         transition={{ delay: 0.2, duration: 0.8 }}
         className="text-gray-200 text-center max-w-2xl mb-12"
       >
-        J’utilise ces technologies au quotidien pour bâtir des interfaces web élégantes et responsives,  
-        ainsi que des systèmes robustes et performants, tout en assurant maintenabilité, sécurité et fluidité d’expérience.
-
+        J'utilise ces technologies au quotidien pour bâtir des interfaces web élégantes et responsives,  
+        ainsi que des systèmes robustes et performants, tout en assurant maintenabilité, sécurité et fluidité d'expérience.
       </motion.p>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl w-full">
@@ -93,7 +116,7 @@ const Skills = () => {
             whileHover={{ scale: 1.05 }}
             className="relative cursor-pointer bg-white/10 backdrop-blur-sm text-white border border-white/10 rounded-xl shadow-lg p-6 flex flex-col items-center transition-all hover:shadow-2xl overflow-hidden group"
           >
-            {/* Overlay consulter */}
+            
             <motion.div
               initial={{ y: -80, opacity: 0 }}
               whileHover={{ y: 0, opacity: 1 }}
@@ -105,14 +128,14 @@ const Skills = () => {
               </span>
             </motion.div>
 
-            {/* Icon */}
+            
             <div
               className={`text-5xl mb-3 z-0 ${skill.color} group-hover:scale-110 transition-transform duration-300`}
             >
               {skill.icon}
             </div>
 
-            {/* Nom */}
+            
             <p className="text-lg font-semibold tracking-wide z-0">
               {skill.name}
             </p>

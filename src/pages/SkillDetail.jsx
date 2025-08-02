@@ -6,7 +6,6 @@ import {
   FaLaravel,
   FaHtml5,
   FaCss3Alt,
-  FaJs,
   FaDatabase,
   FaArrowUp,
   FaGithub,
@@ -16,11 +15,23 @@ import {
   FaUsers,
   FaCodeBranch,
   FaMobile,
-  FaServer
+  FaServer,
+  FaPhp,
+  FaFire,
+  FaPalette,
+  FaMagic
 } from 'react-icons/fa';
-import { SiTypescript, SiRedux, SiNextdotjs, SiVite, SiWebpack } from 'react-icons/si';
+import { 
+  SiTypescript, 
+  SiRedux, 
+  SiNextdotjs, 
+  SiVite, 
+  SiWebpack,
+  SiTailwindcss,
+  SiFirebase
+} from 'react-icons/si';
 
-// Helper component for statistics cards
+
 const StatCard = ({ icon, value, label }) => (
   <motion.div 
     className="bg-white/5 p-4 rounded-lg flex items-center gap-3"
@@ -34,7 +45,7 @@ const StatCard = ({ icon, value, label }) => (
   </motion.div>
 );
 
-// Technology timeline component
+
 const Timeline = ({ events }) => (
   <div className="relative pl-8 border-l-2 border-secondary/50">
     {events.map((event, idx) => (
@@ -265,7 +276,7 @@ const details = {
     ],
     ecosystem: [
       { name: "Sass", description: "Préprocesseur CSS", icon: <FaCodeBranch className="text-pink-500" /> },
-      { name: "Tailwind CSS", description: "Framework utility-first", icon: <FaCss3Alt className="text-blue-400" /> },
+      { name: "Tailwind CSS", description: "Framework utility-first", icon: <SiTailwindcss className="text-cyan-400" /> },
       { name: "CSS Modules", description: "Local scope pour CSS", icon: <FaServer className="text-green-500" /> },
       { name: "PostCSS", description: "Transformation CSS avec JS", icon: <FaDatabase className="text-red-500" /> }
     ],
@@ -287,54 +298,147 @@ const details = {
       { label: 'Can I Use', url: 'https://caniuse.com/' }
     ],
   },
-  javascript: {
-    name: 'JavaScript',
-    icon: <FaJs className="text-yellow-400 text-[80px]" />,
+  php: {
+    name: 'PHP',
+    icon: <FaPhp className="text-purple-500 text-[80px]" />,
     definition:
-      "JavaScript est un langage de programmation de haut niveau, interprété, qui est un pilier du développement web moderne. Initialement conçu pour rendre les pages web interactives, il est maintenant utilisé du frontend au backend (Node.js), en passant par le mobile (React Native) et même l'IoT.",
+      "PHP est un langage de script généraliste et open source, spécialement conçu pour le développement web. Il peut être intégré directement dans le HTML et est exécuté côté serveur, permettant de générer des pages web dynamiques. PHP alimente près de 80% du web, dont des plateformes majeures comme WordPress, Wikipedia et Facebook.",
     created: "1995",
-    creator: "Brendan Eich (Netscape)",
+    creator: "Rasmus Lerdorf",
     evolution:
-      "De simple langage de script, JavaScript est devenu un écosystème complet avec l'introduction de Node.js (2009) et l'adoption massive d'ES6 (2015). Les améliorations annuelles via ECMAScript, les Web APIs et les frameworks comme React et Vue ont fait de JS le langage le plus utilisé au monde.",
+      "Initialement conçu comme un ensemble simple d'outils CGI, PHP est devenu un langage complet avec la version 3.0. PHP 5 a introduit un modèle objet complet, et PHP 7 a apporté des améliorations majeures de performances. PHP 8 continue d'évoluer avec JIT compilation et de nouvelles fonctionnalités.",
     technicalDetails: {
-      typing: "Dynamique, faible",
-      paradigm: "Multi-paradigme (OOP, fonctionnel)",
-      engine: "V8 (Chrome), SpiderMonkey (Firefox)",
-      standard: "ECMAScript (ES2023 actuel)",
-      transpilers: "Babel, TypeScript",
-      packageManagers: "npm, yarn, pnpm",
-      runtime: "Navigateur ou Node.js"
+      type: "Langage de script côté serveur",
+      paradigme: "Impératif, Objet, Fonctionnel",
+      execution: "Interprété (Zend Engine)",
+      license: "PHP License",
+      latestVersion: "8.2 (2023)",
+      performance: "2-3x plus rapide depuis PHP 7.0",
+      utilisation: "78.9% des sites web (W3Techs)"
     },
     statistics: [
-      { icon: <FaGithub />, value: "#1", label: "Langage le plus populaire" },
-      { icon: <FaNpm />, value: "2M+", label: "Packages npm" },
-      { icon: <FaStackOverflow />, value: "2M+", label: "Questions" },
-      { icon: <FaUsers />, value: "97%", label: "Sites utilisant JS" }
+      { icon: <FaUsers />, value: "78.9%", label: "Part de marché web" },
+      { icon: <FaGithub />, value: "36k+", label: "Stars GitHub" },
+      { icon: <FaStackOverflow />, value: "1.4M+", label: "Questions" },
+      { icon: <FaServer />, value: "244M", label: "Sites utilisant PHP" }
     ],
     ecosystem: [
-      { name: "TypeScript", description: "JavaScript typé", icon: <SiTypescript className="text-blue-600" /> },
-      { name: "Node.js", description: "Runtime JavaScript", icon: <FaServer className="text-green-500" /> },
-      { name: "Webpack", description: "Module bundler", icon: <SiWebpack className="text-blue-400" /> },
-      { name: "Deno", description: "Runtime moderne", icon: <FaCodeBranch className="text-black dark:text-white" /> }
+      { name: "Composer", description: "Gestionnaire de dépendances", icon: <FaCodeBranch className="text-blue-500" /> },
+      { name: "Laravel", description: "Framework PHP moderne", icon: <FaLaravel className="text-red-500" /> },
+      { name: "Symfony", description: "Framework et composants PHP", icon: <FaServer className="text-black dark:text-white" /> },
+      { name: "WordPress", description: "CMS le plus populaire", icon: <FaDatabase className="text-blue-400" /> }
     ],
     timeline: [
-      { year: "1995", description: "Créé en 10 jours par Brendan Eich" },
-      { year: "1997", description: "Standardisé comme ECMAScript" },
-      { year: "2009", description: "Node.js et npm créés" },
-      { year: "2015", description: "ES6 avec classes, modules, etc." },
-      { year: "2016", description: "WebAssembly annoncé" },
-      { year: "2018", description: "ES Modules dans les navigateurs" },
-      { year: "2020", description: "Deno 1.0 sorti" },
-      { year: "2022", description: "ES2022 avec top-level await" }
+      { year: "1995", description: "PHP/FI (Personal Home Page Tools)" },
+      { year: "1998", description: "PHP 3.0 - Première version majeure" },
+      { year: "2000", description: "PHP 4 avec Zend Engine" },
+      { year: "2004", description: "PHP 5 avec modèle objet complet" },
+      { year: "2015", description: "PHP 7 - Améliorations majeures de performance" },
+      { year: "2020", description: "PHP 8 avec JIT compiler" },
+      { year: "2022", description: "PHP 8.2 avec nouvelles fonctionnalités" }
     ],
-    performance: "Les moteurs JavaScript modernes utilisent des techniques comme JIT compilation, inline caching et optimization heuristics pour atteindre des performances proches des langages compilés. Les benchmarks montrent que JS est 50-100x plus rapide qu'en 2008 grâce à la course aux performances entre navigateurs.",
+    performance: "PHP 8.x est significativement plus rapide que les versions précédentes, avec des performances comparables à Node.js pour de nombreux cas d'utilisation. Le JIT compiler introduit en PHP 8 permet des gains de performance supplémentaires pour les calculs intensifs.",
     links: [
-      { label: 'ECMAScript', url: 'https://tc39.es/' },
-      { label: 'MDN Web Docs', url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript' },
-      { label: 'State of JS', url: 'https://stateofjs.com/' },
-      { label: 'npm', url: 'https://www.npmjs.com/' }
+      { label: 'Site officiel', url: 'https://www.php.net/' },
+      { label: 'Documentation', url: 'https://www.php.net/manual/fr/' },
+      { label: 'PHP The Right Way', url: 'https://phptherightway.com/' },
+      { label: 'Packagist', url: 'https://packagist.org/' }
     ],
   },
+  tailwind: {
+    name: 'Tailwind CSS',
+    icon: <SiTailwindcss className="text-cyan-400 text-[80px]" />,
+    definition:
+      "Tailwind CSS est un framework CSS utility-first qui permet de construire des designs personnalisés directement dans le markup. Contrairement aux frameworks traditionnels comme Bootstrap, Tailwind fournit des classes bas niveau qui peuvent être composées pour créer n'importe quel design sans quitter votre HTML.",
+    created: "2017",
+    creator: "Adam Wathan",
+    evolution:
+      "Tailwind CSS a révolutionné l'approche du styling en proposant une méthodologie utility-first qui maximise la réutilisation et minimise la taille du CSS. Sa popularité a explosé grâce à son excellente documentation, ses performances et son intégration avec les frameworks JavaScript modernes. La v3 a introduit JIT compiler pour des performances encore meilleures.",
+    technicalDetails: {
+      approach: "Utility-first CSS",
+      size: "~10kB (gzipped)",
+      processor: "PostCSS",
+      customization: "Fichier de configuration extensible",
+      darkMode: "Support natif",
+      license: "MIT",
+      latestVersion: "3.3.0 (2023)",
+      requirements: "Node.js 12.13.0+"
+    },
+    statistics: [
+      { icon: <FaGithub />, value: "68k+", label: "Stars GitHub" },
+      { icon: <FaNpm />, value: "6M+/semaine", label: "Téléchargements npm" },
+      { icon: <FaStackOverflow />, value: "25k+", label: "Questions" },
+      { icon: <FaUsers />, value: "35%", label: "Utilisation CSS" }
+    ],
+    ecosystem: [
+      { name: "Tailwind UI", description: "Composants premium", icon: <FaPalette className="text-indigo-500" /> },
+      { name: "Headless UI", description: "Composants accessibles", icon: <FaMagic className="text-purple-500" /> },
+      { name: "daisyUI", description: "Composants Tailwind", icon: <SiTailwindcss className="text-pink-500" /> },
+      { name: "Tailwind Play", description: "Sandbox en ligne", icon: <FaCodeBranch className="text-blue-400" /> }
+    ],
+    timeline: [
+      { year: "2017", description: "Première version de Tailwind CSS" },
+      { year: "2019", description: "Version 1.0 avec documentation améliorée" },
+      { year: "2020", description: "Tailwind UI lancé" },
+      { year: "2021", description: "Version 2.0 avec JIT compiler" },
+      { year: "2022", description: "Version 3.0 avec toutes les fonctionnalités JIT" },
+      { year: "2023", description: "Support amélioré pour CSS nesting" }
+    ],
+    performance: "Tailwind CSS génère un CSS extrêmement optimisé grâce à son approche utility-first et à son purge CSS intégré. Les sites utilisant Tailwind chargent typiquement 10-20kB de CSS contre 100-200kB pour les frameworks traditionnels. Le JIT compiler réduit encore les temps de build tout en permettant un développement plus rapide.",
+    links: [
+      { label: 'Site officiel', url: 'https://tailwindcss.com/' },
+      { label: 'Documentation', url: 'https://tailwindcss.com/docs' },
+      { label: 'GitHub', url: 'https://github.com/tailwindlabs/tailwindcss' },
+      { label: 'Tailwind Play', url: 'https://play.tailwindcss.com/' },
+      { label: 'Tailwind UI', url: 'https://tailwindui.com/' }
+    ],
+  },
+  firebase: {
+    name: 'Firebase',
+    icon: <SiFirebase className="text-amber-500 text-[80px]" />,
+    definition:
+      "Firebase est une plateforme de développement d'applications mobiles et web créée par Firebase, Inc. en 2011, acquise par Google en 2014. Elle fournit des outils pour le développement d'applications de qualité, la croissance de votre base d'utilisateurs et la génération de revenus.",
+    created: "2011",
+    creator: "Firebase, Inc. (acquired by Google)",
+    evolution:
+      "Initialement conçu comme une base de données temps réel, Firebase s'est transformé en une plateforme complète offrant des services d'authentification, d'hébergement, de stockage, de fonctions cloud, et d'analyse. Son intégration avec Google Cloud Platform en fait une solution puissante pour les développeurs.",
+    technicalDetails: {
+      type: "Platforme Backend-as-a-Service (BaaS)",
+      database: "Firestore (NoSQL), Realtime Database",
+      hosting: "Hébergement global avec CDN",
+      authentification: "Multi-provider (Google, Facebook, etc.)",
+      functions: "Cloud Functions (Node.js)",
+      analytics: "Google Analytics intégré",
+      pricing: "Gratuit avec limites, puis pay-as-you-go"
+    },
+    statistics: [
+      { icon: <FaUsers />, value: "3M+", label: "Applications utilisant Firebase" },
+      { icon: <FaGithub />, value: "33k+", label: "Stars GitHub" },
+      { icon: <FaStackOverflow />, value: "85k+", label: "Questions" },
+      { icon: <FaServer />, value: "1B+", label: "Utilisateurs authentifiés/mois" }
+    ],
+    ecosystem: [
+      { name: "Firestore", description: "Base de données NoSQL", icon: <FaDatabase className="text-blue-500" /> },
+      { name: "Cloud Functions", description: "Backend sans serveur", icon: <FaServer className="text-green-500" /> },
+      { name: "Authentication", description: "Gestion des utilisateurs", icon: <FaFire className="text-red-500" /> },
+      { name: "Hosting", description: "Hébergement global", icon: <FaChartLine className="text-purple-500" /> }
+    ],
+    timeline: [
+      { year: "2011", description: "Lancement initial comme startup" },
+      { year: "2014", description: "Acquisition par Google" },
+      { year: "2016", description: "Extension avec de nouveaux services" },
+      { year: "2017", description: "Intégration avec Google Cloud" },
+      { year: "2020", description: "Extensions Firebase et Emulator Suite" },
+      { year: "2022", description: "Nouvelles fonctionnalités de sécurité" }
+    ],
+    performance: "Firebase offre des performances excellentes grâce à son infrastructure globale. Firestore peut gérer des millions de connexions simultanées avec une latence faible. Les fonctions cloud s'exécutent en moins de 100ms pour des opérations simples, et l'hébergement utilise le CDN de Google pour une livraison ultra-rapide.",
+    links: [
+      { label: 'Site officiel', url: 'https://firebase.google.com/' },
+      { label: 'Documentation', url: 'https://firebase.google.com/docs' },
+      { label: 'Console Firebase', url: 'https://console.firebase.google.com/' },
+      { label: 'GitHub', url: 'https://github.com/firebase/' }
+    ],
+  }
 };
 
 const containerVariants = {
@@ -428,7 +532,7 @@ const SkillDetail = () => {
         {skill.definition}
       </motion.p>
 
-      {/* Statistics Grid */}
+      
       <motion.div 
         className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 w-full max-w-4xl"
         variants={itemVariants}
@@ -438,7 +542,7 @@ const SkillDetail = () => {
         ))}
       </motion.div>
 
-      {/* Technical Details */}
+     
       <motion.div 
         className="bg-white/10 backdrop-blur rounded-xl p-8 space-y-6 text-gray-100 shadow-lg max-w-4xl w-full mb-12"
         variants={itemVariants}
@@ -454,7 +558,7 @@ const SkillDetail = () => {
         </div>
       </motion.div>
 
-      {/* Ecosystem */}
+     
       <motion.div 
         className="w-full max-w-4xl mb-12"
         variants={itemVariants}
@@ -477,7 +581,7 @@ const SkillDetail = () => {
         </div>
       </motion.div>
 
-      {/* Timeline & Performance */}
+      
       <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         <motion.div variants={itemVariants}>
           <h2 className="text-2xl font-semibold mb-6 text-secondary">⏳ Chronologie & Évolution</h2>
@@ -492,7 +596,7 @@ const SkillDetail = () => {
         </motion.div>
       </div>
 
-      {/* Links */}
+      
       <motion.div className="w-full max-w-4xl mb-12" variants={itemVariants}>
         <h2 className="text-2xl font-semibold mb-6 text-secondary">🔗 Ressources & Documentation</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

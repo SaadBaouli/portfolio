@@ -1,34 +1,44 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaGithub } from 'react-icons/fa'; 
+
 
 const projets = [
   {
     id: 1,
     title: 'LocaTech',
     desc: "Plateforme immobilière moderne avec recherche avancée, chat AI, notifications, et carte des biens.",
-    tech: ['React', 'Laravel', 'Tailwind'],
+    tech: ['React', 'Laravel', 'Tailwind', 'MySQL', 'Firebase'],
+    image: '/assets/locatech.jpg',
+    github: 'https://github.com/username/locatech',
   },
   {
     id: 2,
     title: 'LearnCodeLab',
     desc: "Plateforme interactive pour apprendre à coder. Contenu dynamique, quiz, et socket pour collaboration.",
-    tech: ['React', 'Laravel', 'Socket.io'],
+    tech: ['React', 'Laravel', 'Tailwind', 'MySQL', 'Socket.io'],
+    image: '/assets/learncodelab.jpg',
+    github: 'https://github.com/username/learncodelab',
   },
   {
     id: 3,
     title: 'Site vitrine React',
     desc: "Site personnel moderne et responsive avec animations fluides et intégration Tailwind + Framer Motion.",
     tech: ['React', 'Tailwind'],
+    image: '/assets/vitrine.jpg',
+    github: 'https://github.com/username/site-vitrine',
   },
   {
     id: 4,
     title: 'API Laravel',
     desc: "Développement d’une API RESTful sécurisée avec authentification JWT, gestion des utilisateurs, et base MySQL.",
     tech: ['Laravel', 'MySQL'],
+    image: '/assets/api.jpg',
+    github: 'https://github.com/username/api-laravel',
   },
 ];
 
-const stacks = ['Tous', 'React', 'Laravel', 'Tailwind', 'MySQL', 'Socket.io'];
+const stacks = ['Tous', 'React', 'Laravel', 'Tailwind', 'MySQL', 'Firebase'];
 
 const Projects = () => {
   const [activeStack, setActiveStack] = useState('Tous');
@@ -58,7 +68,7 @@ const Projects = () => {
         Chaque application reflète ma capacité à résoudre des problèmes concrets grâce à une stack technique adaptée, en mettant l'accent sur la qualité du code, la sécurité, et l'interactivité.
       </motion.p>
 
-      {/* Filtres par stack */}
+      
       <div className="flex flex-wrap justify-center gap-3 mb-12">
         {stacks.map((stack) => (
           <button
@@ -75,7 +85,7 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Cartes de projets */}
+     
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {filtered.map((proj, index) => (
           <motion.div
@@ -84,20 +94,41 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
             whileHover={{ scale: 1.04 }}
-            className="relative group bg-white text-gray-900 rounded-xl p-6 shadow-lg border border-transparent hover:border-secondary transition overflow-hidden"
+            className="relative group bg-white text-gray-900 rounded-xl shadow-lg border border-transparent hover:border-secondary transition overflow-hidden"
           >
-            <span className="absolute bottom-0 left-0 w-0 h-1 bg-secondary transition-all duration-300 group-hover:w-full" />
-            <h3 className="text-2xl font-semibold mb-2 text-secondary">{proj.title}</h3>
-            <p className="text-gray-800 mb-4">{proj.desc}</p>
-            <div className="flex flex-wrap gap-2 mt-4">
-              {proj.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-secondary text-white text-xs px-3 py-1 rounded-full"
+            
+            <img
+              src={proj.image}
+              alt={proj.title}
+              className="w-full h-48 object-cover rounded-t-xl"
+            />
+            <div className="p-6">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2 text-secondary">{proj.title}</h3>
+                  <p className="text-gray-800 mb-4">{proj.desc}</p>
+                </div>
+               
+                <a
+                  href={proj.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:text-secondary text-2xl transition ml-4"
                 >
-                  {tech}
-                </span>
-              ))}
+                  <FaGithub />
+                </a>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-4">
+                {proj.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="bg-secondary text-white text-xs px-3 py-1 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
