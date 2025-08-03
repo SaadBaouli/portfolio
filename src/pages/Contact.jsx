@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
+import { FaStar } from 'react-icons/fa';
 
 const Contact = () => {
   const form = useRef();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -22,6 +25,7 @@ const Contact = () => {
       )
       .then(() => {
         form.current.reset();
+        setRating(0);
         setLoading(false);
 
         toast.success('Message envoyé avec succès !', {
@@ -104,6 +108,48 @@ const Contact = () => {
           className="bg-white/20 text-white placeholder-white/70 px-4 py-3 rounded-xl w-full h-32 focus:outline-none focus:ring-2 focus:ring-secondary"
           required
         ></textarea>
+
+        {/* ✅ Système de rating */}
+        <div className="flex justify-center space-x-2 mt-4">
+          {[...Array(5)].map((star, index) => {
+            const currentRating = index + 1;
+            return (
+              <label key={index}>
+                <input
+                  type="radio"
+                  name="rating"
+                  value={currentRating}
+                  onClick={() => setRating(currentRating)}
+                  className="hidden"
+                />
+                <FaStar
+                  size={28}
+                  className="cursor-pointer transition-colors"
+                  color={
+                    currentRating <= (hover || rating)
+                      ? '#facc15'
+                      : '#d1d5db'
+                  }
+                  onMouseEnter={() => setHover(currentRating)}
+                  onMouseLeave={() => setHover(0)}
+                />
+              </label>
+            );
+          })}
+        </div>
+        <p className="text-center text-sm text-gray-300">
+          {rating > 0
+            ? `Vous avez donné ${rating} étoile(s).`
+            : "Évaluez votre expérience"}
+        </p>
+
+        {/* ✅ Champ caché pour EmailJS */}
+<input 
+  type="hidden" 
+  name="rating" 
+  value={rating ? rating.toString() : "0"} 
+/>
+
 
         <motion.button
           type="submit"

@@ -6,6 +6,9 @@ import {
   FaLaravel,
   FaHtml5,
   FaCss3Alt,
+  FaJs,
+  FaNodeJs, 
+  FaVuejs,
   FaDatabase,
   FaArrowUp,
   FaGithub,
@@ -298,6 +301,54 @@ const details = {
       { label: 'Can I Use', url: 'https://caniuse.com/' }
     ],
   },
+  javascript: {
+  name: 'JavaScript',
+  icon: <FaJs className="text-yellow-400 text-[80px]" />,
+  definition:
+    "JavaScript est un langage de script orienté objet principalement utilisé pour rendre les pages web interactives. C'est un langage clé du développement web avec HTML et CSS, permettant de créer des expériences utilisateur dynamiques. JavaScript s'exécute côté client mais peut aussi être utilisé côté serveur avec Node.js.",
+  created: "1995",
+  creator: "Brendan Eich (Netscape)",
+  evolution:
+    "Initialement créé en 10 jours sous le nom Mocha, JavaScript est devenu un langage puissant avec l'introduction d'ES6 en 2015. Les versions annuelles ECMAScript ont ajouté des fonctionnalités modernes comme les classes, les modules, et async/await. Aujourd'hui, JavaScript est utilisé partout - frontend, backend, mobile, IoT et plus.",
+  technicalDetails: {
+    type: "Langage de script multi-paradigme",
+    paradigme: "Objet, Fonctionnel, Événementiel",
+    execution: "Interprété (JIT compilation avec V8, SpiderMonkey)",
+    standard: "ECMAScript (ES2023 actuel)",
+    typing: "Dynamique, faible",
+    license: "Open source (implémentations diverses)",
+    latestVersion: "ECMAScript 2023",
+    runtime: "Navigateurs, Node.js, Deno, Bun"
+  },
+  statistics: [
+    { icon: <FaGithub />, value: "1.5M+", label: "Projets GitHub" },
+    { icon: <FaNpm />, value: "2B+/semaine", label: "Téléchargements npm" },
+    { icon: <FaStackOverflow />, value: "2M+", label: "Questions" },
+    { icon: <FaUsers />, value: "97%", label: "Sites web utilisant JS" }
+  ],
+  ecosystem: [
+    { name: "Node.js", description: "Runtime JavaScript serveur", icon: <FaNodeJs className="text-green-500" /> },
+    { name: "TypeScript", description: "Sur-ensemble typé de JS", icon: <SiTypescript className="text-blue-600" /> },
+    { name: "React", description: "Bibliothèque UI", icon: <FaReact className="text-blue-400" /> },
+    { name: "Vue.js", description: "Framework progressif", icon: <FaVuejs className="text-green-400" /> }
+  ],
+  timeline: [
+    { year: "1995", description: "Création en 10 jours par Brendan Eich" },
+    { year: "1997", description: "Standardisation ECMAScript" },
+    { year: "2009", description: "Sortie de Node.js et npm" },
+    { year: "2015", description: "ES6 - Grande mise à jour du langage" },
+    { year: "2018", description: "ES Modules standardisés" },
+    { year: "2020", description: "Deno 1.0 - Runtime alternatif" },
+    { year: "2022", description: "ES2022 avec top-level await" }
+  ],
+  performance: "Les moteurs JavaScript modernes (V8, SpiderMonkey, JavaScriptCore) utilisent des techniques avancées comme le JIT compiling et l'optimisation à chaud pour atteindre des performances proches des langages compilés. WebAssembly permet d'exécuter du code encore plus performant dans le navigateur.",
+  links: [
+    { label: 'MDN Web Docs', url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript' },
+    { label: 'ECMAScript Spec', url: 'https://tc39.es/ecma262/' },
+    { label: 'Node.js', url: 'https://nodejs.org/' },
+    { label: 'State of JS', url: 'https://stateofjs.com/' }
+  ],
+},
   php: {
     name: 'PHP',
     icon: <FaPhp className="text-purple-500 text-[80px]" />,

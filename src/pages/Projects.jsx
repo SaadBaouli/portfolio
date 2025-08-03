@@ -10,7 +10,7 @@ const projets = [
     desc: "Plateforme immobilière moderne avec recherche avancée, chat AI, notifications, et carte des biens.",
     tech: ['React', 'Laravel', 'Tailwind', 'MySQL', 'Firebase'],
     image: '/assets/locatech.jpg',
-    github: 'https://github.com/username/locatech',
+    github: 'https://github.com/SAAD-ELGHABA/LocaTech',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const projets = [
     desc: "Plateforme interactive pour apprendre à coder. Contenu dynamique, quiz, et socket pour collaboration.",
     tech: ['React', 'Laravel', 'Tailwind', 'MySQL', 'Socket.io'],
     image: '/assets/learncodelab.jpg',
-    github: 'https://github.com/username/learncodelab',
+    github: 'https://github.com/SAAD-ELGHABA/LearnCodeLab',
   },
   {
     id: 3,

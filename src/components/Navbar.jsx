@@ -23,7 +23,7 @@ const Navbar = () => {
           transition={{ duration: 0.8 }}
           className="text-2xl font-bold text-white hover:text-secondary transition cursor-pointer"
         >
-          Dev.
+          Saad
         </motion.h1>
       </Link>
 
